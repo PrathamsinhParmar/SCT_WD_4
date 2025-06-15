@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <div class="task-stats">
+                <span id="total-tasks">Total: 0</span>
+                <span id="completed-tasks">Completed: 0</span>
+            </div>
+        </header>
+
+        <div class="add-task-container">
+            <form id="task-form">
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Add a new task..." required>
+                    <input type="datetime-local" id="task-datetime">
+                </div>
+                <button type="submit" class="add-btn">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </form>
+        </div>
+
+        <div class="filter-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <div class="tasks-container">
+            <ul id="task-list"></ul>
+        </div>
+
+        <div class="clear-container">
+            <button id="clear-completed" class="clear-btn">
+                <i class="fas fa-trash-alt"></i> Clear Completed
+            </button>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <form id="edit-form">
+                <div class="input-group">
+                    <input type="text" id="edit-task-input" required>
+                    <input type="datetime-local" id="edit-task-datetime">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn" id="cancel-edit">Cancel</button>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
